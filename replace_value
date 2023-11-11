@@ -1,0 +1,17 @@
+Sub FindValue()
+    
+    Dim c As Range
+    Dim firstAddress As String
+
+    With Worksheets(1).Range("A1:A50")
+        Set c = .Find(2, LookIn:=xlValues)
+        If Not c Is Nothing Then
+            firstAddress = c.Address
+            Do
+                c.Value = 5
+                Set c = .FindNext(c)
+            Loop While Not c Is Nothing
+        End If
+    End With
+    
+End Sub
