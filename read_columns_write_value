@@ -1,0 +1,9 @@
+Sub CacheValue()
+
+
+Dim strFormula As String
+
+strFormula = "=IF(OR(A1=""SERV"",B1=""SERVICE""),""Hello World"","""")"
+Sheet1.Range("J1:J50").Formula = strFormula
+
+End Sub
