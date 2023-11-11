@@ -1,0 +1,17 @@
+Sub Range_Find_Method()
+'Finds the last non-blank cell on a sheet/range.
+
+Dim lRow As Long
+Dim lCol As Long
+    
+    lRow = Cells.Find(What:="*", _
+                    After:=Range("A1"), _
+                    LookAt:=xlPart, _
+                    LookIn:=xlFormulas, _
+                    SearchOrder:=xlByRows, _
+                    SearchDirection:=xlPrevious, _
+                    MatchCase:=False).Row
+    
+    MsgBox "Last Row: " & lRow
+
+End Sub
