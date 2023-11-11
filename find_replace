@@ -1,0 +1,17 @@
+Sub FindString()
+
+    Dim c As Range
+    Dim firstAddress As String
+
+    With Worksheets(1).Range("A1:A50")
+        Set c = .Find("abc", LookIn:=xlValues)
+        If Not c Is Nothing Then
+            firstAddress = c.Address
+            Do
+                c.Value = Replace(c.Value, "abc", "xyz")
+                Set c = .FindNext(c)
+            Loop While Not c Is Nothing
+        End If
+    End With
+
+End Sub
